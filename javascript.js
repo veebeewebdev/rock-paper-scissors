@@ -7,8 +7,10 @@ function computerPlay() {
 }
 
 
-let playerSelection = prompt("Enter your selection:");
+let playerInput = prompt("Enter your selection:");
+let playerSelection = playerInput.toLowerCase();
 
+// let playerSelection = playerInput.toLowerCase;
 // playerSelection = playerSelection.toLowerCase;
 
 function playRound(playerSelection, computerSelection) {
