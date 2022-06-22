@@ -6,15 +6,22 @@ function computerPlay() {
     return computerSelection;
 }
 
+function playerPlay() {
+    let playerInput = prompt("Enter your selection:");
+    let playerInputLower = playerInput.toLowerCase();
+    //if not in array 'Try again!
+    if (!choices.includes(playerInputLower)) {
+        console.log('Try again!');
+    }
+    return playerInputLower;
+}
 
-let playerInput = prompt("Enter your selection:");
-let playerSelection = playerInput.toLowerCase();
 
-// let playerSelection = playerInput.toLowerCase;
-// playerSelection = playerSelection.toLowerCase;
-
-function playRound(playerSelection, computerSelection) {
+function playRound(playerPlay, computerPlay) {
     // your code here!
+    let computerSelection = computerPlay;
+    let playerSelection = playerPlay;
+
     if (playerSelection == computerSelection) {
         result = 'Tie!';
         return result;
@@ -45,8 +52,25 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
-// console.log(playRound(playerSelection, computerPlay()));
+function game() {
+    let winCounter = 0;
+    let lossCounter = 0;
 
-// const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+    for (let i = 0; i < 5; i++) {
+        // your code here!
+        result = playRound(playerPlay(), computerPlay());
+        if (result.includes('win')) { winCounter++ };
+        if (result.includes('lose')) { lossCounter++ };
+
+        console.log('playRound result: ' + result);
+        console.log('winCounter: ' + winCounter);
+        console.log('lossCounter: ' + lossCounter);
+    }
+    if (winCounter > lossCounter) { finalScore = 'You win the game!' }
+    if (lossCounter > winCounter) { finalScore = 'You lose the game!' }
+    else { finalScore = 'This game was a tie!' };
+    console.log(finalScore);
+}
+
+
+game();
