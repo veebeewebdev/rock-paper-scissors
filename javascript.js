@@ -9,9 +9,9 @@ function computerPlay() {
 function playerPlay() {
     let playerInput = prompt("Enter your selection:");
     let playerInputLower = playerInput.toLowerCase();
-    //if not in array 'Try again!
     if (!choices.includes(playerInputLower)) {
-        console.log('Try again!');
+        // console.log('Try again!');
+        return 'invalid';
     }
     return playerInputLower;
 }
@@ -21,8 +21,13 @@ function playRound(playerPlay, computerPlay) {
     // your code here!
     let computerSelection = computerPlay;
     let playerSelection = playerPlay;
-
-    if (playerSelection == computerSelection) {
+    if (playerSelection == 'invalid') {
+        //restart round
+        console.log('That\'s not a valid choice!');
+        console.log('Refresh and start over');
+        return;
+    }
+    if (playerSelection === computerSelection) {
         result = 'Tie!';
         return result;
     } if (playerSelection == 'rock') {
