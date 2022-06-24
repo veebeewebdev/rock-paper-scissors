@@ -1,0 +1,27 @@
+h1 {
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.header-section,
+.section-two,
+.results,
+.score {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.score {
+    flex-direction: column;
+    align-items: center;
+}

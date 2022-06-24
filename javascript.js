@@ -19,6 +19,14 @@ function playRound() {
     const scoreSpan = document.createElement('span');
     scoreSpan.id = 'scoreSpan';
 
+    if (document.getElementById('winnerSpan')) {
+        console.log(document.getElementById('winnerSpan'));
+        document.getElementById('winnerSpan').remove();
+    }
+    const winnerSpan = document.createElement('p');
+    winnerSpan.id = 'winnerSpan';
+    let winner = '';
+
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
     const selectedButton = this.id;
     console.log(selectedButton);
@@ -78,10 +86,17 @@ function playRound() {
         console.log('WINNER!!!');
         playerWinCounter = 0;
         computerWinCounter = 0;
-    }     if (computerWinCounter === 5) {
+        winner = 'WINNER!!!';
+    } if (computerWinCounter === 5) {
         console.log('COMPUTER WINS!!!');
         playerWinCounter = 0;
-        computerWinCounter = 0;
+        computerWinCounter = 0; score
+        winner = 'COMPUTER WINS!!!'
+    }
+    if (winner != '') {
+        const winnerSpanText = document.createTextNode(winner);
+        winnerSpan.appendChild(winnerSpanText);
+        document.getElementById("score").appendChild(winnerSpan);
     }
     // return result;
 }
