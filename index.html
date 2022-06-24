@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <h1>Rock Paper Scissors</h1>
-</body>
-<script src="javascript.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <div class="header-section">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div>
+            <h2>Choose your weapon! First to reach 5 points wins!</h2>
+        </div>
+        <div class="selection-buttons">
+            <div id='rock' class="btn rock-btn">
+                <button>Rock</button>
+            </div>
+            <div id="paper" class="btn paper-btn">
+                <button>Paper</button>
+            </div>
+            <div id='scissors' class="btn scissors-btn">
+                <button>Scissors</button>
+            </div>
+        </div>
+        <div id="results" class="results">
+            <!-- <span id="childSpan">results go here</span> -->
+            <!-- <span id="scoreSpan"></span> -->
+        </div>
+        <div id="score"></div>
+    </body>
+    <script src="javascript.js"></script>
 </html>
